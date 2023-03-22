@@ -1,3 +1,4 @@
+import puppeteer from 'puppeteer';
 import puppeteerExtra from 'puppeteer-extra';
 import stealthPlugin from 'puppeteer-extra-plugin-stealth';
 puppeteerExtra.use(stealthPlugin());
@@ -36,9 +37,9 @@ export const trimExtraSpaces = (str) => {
     return str.replace(/\n/g, '').replace(/\s+/g, ' ')
         .trim();
 }
-export const takeScreenShot = async(page, filename, fullPage = false) => {
+export const takeScreenShot = async(page, filePath, filename, fullPage = false) => {
     await page.screenshot({
-        path: `${ssPath}/${filename}-${Date.now()}.jpg`,
+        path: `${filePath}/${filename}-${Date.now()}.jpg`,
         fullPage
     });
 }
