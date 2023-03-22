@@ -34,15 +34,15 @@ const parseResults = async (pageHTML) => {
 	// Organic search results
 	const organicResults = [];
 	try {
-		$('[data-sokoban-container]')
+		$('#rso > div > div > div:not(:has(h2:only-child),:has([jsname="yEVEwb"]),:has([data-iu="1"]))')
 			.toArray()
 			.forEach((element, index) => {
 				try {
 					const result = {
 						position: index + 1,
-						title: $(element).find('[data-header-feature=0] div a h3').text(),
-						description: $(element).find('[data-content-feature=2] div').text(),
-						link: $(element).find('[data-header-feature=0] div a').attr().href,
+						title: $(element).find('a h3.DKV0Md, h3.haz7je').text(),
+						description: $(element).find('[data-content-feature="2"], .xcQxib, .VwiC3b.yXK7lf.MUxGbd.yDYNvb.lyLwlc.lEBKkf').text(),
+						link: $(element).find('a:has(h3)').attr('href'),
 					};
 					organicResults.push(result);
 				} catch (error) {}
@@ -58,8 +58,9 @@ const parseResults = async (pageHTML) => {
 				try {
 					const result = {
 						position: index + 1,
-						link: $(element).find('a:has(div[role=heading])').attr().href,
+						link: $(element).find('a:has(div[role=heading])').attr('href'),
 						title: $(element).find('div[role=heading]').text(),
+						description: $(element).find('>div > div > div.MUxGbd > div').text()
 					};
 					adResults.push(result);
 				} catch (error) {}
@@ -78,9 +79,7 @@ const parseResults = async (pageHTML) => {
 						question: $($(element).find('.dnXCYb[role=button]')).text(),
 						answer_text: $($(element).find('.bCOlv div[role=heading]')).text(),
 						answer_resource: $(element).find('.yuRUbf > a').attr().href,
-						search_more:
-							'https://www.google.com' +
-							$($(element).find('.bCOlv > div > a')).attr().href,
+						search_more: $($(element).find('.bCOlv > div > a')).attr().href,
 					};
 					relatedQuestions.push(result);
 				} catch (error) {}
@@ -98,10 +97,11 @@ const parseResults = async (pageHTML) => {
 			.forEach((element) => {
 				try {
 					const attributeValues = {
-						[$(element).find('div div span:first').text()]: $(element)
-							.find('div div span:last')
-							.text(),
-					};
+						[$(element).find('div div span:first').text()]: {
+							value: $(element).find('div div span:last').text(),
+							url: $(element).find('div div div > span > span > a').attr('href'),
+						}
+					}
 					const result = {
 						[$(element).attr()['data-attrid']]: attributeValues,
 					};
@@ -117,8 +117,9 @@ const parseResults = async (pageHTML) => {
 			title: knowledgeGraphCard.find('[data-attrid="title"]:first').text(),
 			subtitle: knowledgeGraphCard.find('[data-attrid="subtitle"]:first').text(),
 			description: knowledgeGraphCard.find('[data-md="50"] h3+span').text(),
-			website: {
-				url: knowledgeGraphCard.find('[data-md="50"] h3+span+span > a').attr().href,
+			official_website: knowledgeGraphCard.find('a[data-attrid="visit_official_site"]').attr('href'),
+			source: {
+				url: knowledgeGraphCard.find('[data-md="50"] h3+span+span > a').attr('href'),
 				text: knowledgeGraphCard.find('[data-md="50"] h3+span+span > a').text(),
 			},
 			attributes,
@@ -179,8 +180,8 @@ const init = async () => {
 };
 
 const parseFromFile = async (pageHTML) => {
+    // return parseResults(pageHTML);
 	const parsedResults = await JSON.stringify(await parseResults(pageHTML));
-    // return parsedResults;
     writeFile(`${resultsPath}/json/${keyword}.json`, parsedResults);
 
     return true;
