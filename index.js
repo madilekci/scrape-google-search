@@ -153,11 +153,10 @@ const parseResults = async (pageHTML) => {
 const parseMobileResults = async (pageHTML) => {
 	const $ = await cheerio.load(pageHTML);
 
-
 	// Organic search results
 	const organicResults = [];
 	try {
-		$('#rso > div > div > div:not(:has(h2:only-child),:has([jsname="yEVEwb"]),:has([data-iu="1"]),:has(>[jsname="Cpkphb"])):not([data-iu="1"]):not([jsname]):has(>*)')
+		$('#rso > div > div:not([jsname]) > div:not(:has(h2:only-child),:has([jsname="yEVEwb"]),:has([data-iu="1"]),:has(>[jsname="Cpkphb"])):not([data-iu="1"]):not(.adDDi):not(.Ph8vHd):not([jsname]):not([jsmodel="d5EhJe"]):has(>*)')
 			.toArray()
 			.forEach((element, index) => {
 				try {
@@ -210,12 +209,12 @@ const parseMobileResults = async (pageHTML) => {
 	} catch (error) {}
 
 	// Knowledge graph
-	const knowledgeGraphCard = $('[role=complementary]');
+	const knowledgeGraphCard = $('div > .osrp-blk');
 
 	// Knowledge graph -> known attributes
 	const attributes = [];
 	try {
-		$('[role=complementary] .wDYxhc[data-attrid]')
+		knowledgeGraphCard.find('.wDYxhc[data-attrid]')
 			.toArray()
 			.forEach((element) => {
 				try {
@@ -239,11 +238,11 @@ const parseMobileResults = async (pageHTML) => {
 		knowledgeGraph = {
 			title: knowledgeGraphCard.find('[data-attrid="title"]:first').text(),
 			subtitle: knowledgeGraphCard.find('[data-attrid="subtitle"]:first').text(),
-			description: knowledgeGraphCard.find('[data-md="50"] h3+span').text(),
+			description: knowledgeGraphCard.find('.kno-rdesc span:first').text(),
 			official_website: knowledgeGraphCard.find('a[data-attrid="visit_official_site"]').attr('href'),
 			source: {
-				url: knowledgeGraphCard.find('[data-md="50"] h3+span+span > a').attr('href'),
-				text: knowledgeGraphCard.find('[data-md="50"] h3+span+span > a').text(),
+				url: knowledgeGraphCard.find('.kno-rdesc span + span > a').attr('href'),
+				text: knowledgeGraphCard.find('.kno-rdesc span + span').text(),
 			},
 			attributes,
 		};
@@ -264,10 +263,10 @@ const parseMobileResults = async (pageHTML) => {
 
 	let parsedResults = {
 		...(organicResults.length > 0 && { organic_results: organicResults }),
-		// ...(adResults.length > 0 && { paid_ads: adResults }),
-		// ...(relatedQuestions.length > 0 && { related_questions: relatedQuestions }),
-		// ...(knowledgeGraph && { knowledge_graph: knowledgeGraph }),
-		// ...(relatedSearch.length > 0 && { related_search: relatedSearch }),
+		...(adResults.length > 0 && { paid_ads: adResults }),
+		...(relatedQuestions.length > 0 && { related_questions: relatedQuestions }),
+		...(knowledgeGraph && { knowledge_graph: knowledgeGraph }),
+		...(relatedSearch.length > 0 && { related_search: relatedSearch }),
 	};
 	return parsedResults;
 };
