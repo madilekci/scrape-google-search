@@ -1,0 +1,164 @@
+{
+	"organic_results": [
+		{
+			"position": 1,
+			"title": "Node.js",
+			"description": "Node.js® is an open-source, cross-platform JavaScript runtime environment. Download for Linux (x64). 18.15.0 LTSRecommended For Most Users · Other Downloads ...",
+			"link": "https://nodejs.org/"
+		},
+		{
+			"position": 2,
+			"title": "Node.js Introduction - W3Schools",
+			"description": "Node.js is an open source server environment; Node.js is free; Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.) ; Node.js can generate ...Node.js is an open source server environment. Node.js allows you to run JavaScript on the server. Start learning Node.js now » ...",
+			"link": "https://www.w3schools.com/nodejs/nodejs_intro.asp"
+		},
+		{
+			"position": 3,
+			"title": "Introduction to Node.js - NodeJS Dev",
+			"description": "Node.js is an open-source and cross-platform JavaScript runtime environment. It is a popular tool for almost any kind of project! Node.js runs the V8 JavaScript ...",
+			"link": "https://nodejs.dev/en/learn/"
+		},
+		{
+			"position": 4,
+			"title": "Node.js - Vikipedi",
+			"description": "Node.js. Server-side JavaScript framework'ü. Dil; İzle · Değiştir.Programlama dili: C, ‎C++‎, ‎JavaScript‎Platform: Microsoft Windows, ‎OS X‎, ‎GNU/Linux‎, ...‎İlk yayınlanma: 27 Mayıs 2009Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript runtime ...Original author(s): Ryan DahlInitial release: May 27, 2009; 13 years agoDeveloper(s): OpenJS FoundationWritten in: C, ‎C++‎, ‎JavaScript‎",
+			"link": "https://tr.wikipedia.org/wiki/Node.js"
+		},
+		{
+			"position": 5,
+			"title": "Node.js (@nodejs) · Twitter",
+			"description": "Over the last couple of days, users may have encountered intermittent 404 responses when accessing hubs.la/Q01Hpg4b0. \n\nWe're confident that fixes have now been deployed that should resolve this. We apologize for any interruption this caused to your workflows.Check out the latest Node.js Security Progress report - Now live!\n\nThis month included:\n✔️ Merging the permission model into the main branch\n✔️ Database automatic updates\n✔️ Security support role goals\n\nhubs.la/Q01GGPZF0 We've released a long-term migration of our Node.js website that enhances the developer experience! By migrating the underlying technology, we improved performance and ease of maintenance.\n\nBig thanks to @wunderacle, @_richard_lau_ and many other contributors for the support 💚Are you currently hiring for a role that includes using Node.js? Reply with a link to the opening and any relevant context.\n\nIf you're not, we'd appreciate a retweet for visibility 💚The OpenJS Collaborator Summit is happening on May 9 in Vancouver, Canada!\n\nCall for proposals are open now until April 2 - submit to speak to speak today. \n\n✏️ Details: hubs.la/Q01Dzsfh0\n✔️ Register: hubs.la/Q01DzmTX0 ",
+			"link": "https://twitter.com/nodejs?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+		},
+		{
+			"position": 6,
+			"title": "nodejs/node: Node.js JavaScript runtime - GitHub",
+			"description": "Node.js is an open-source, cross-platform JavaScript runtime environment. For information on using Node.js, see the Node.js website. The Node.js project uses an ...",
+			"link": "https://github.com/nodejs/node"
+		}
+	],
+	"paid_ads": [
+		{
+			"position": 1,
+			"link": "https://azure.microsoft.com/en-us/free/",
+			"title": "Microsoft Azure - Node.js",
+			"description": "Run Full-Stack Apps. Monitor Data. Add New Services. Create Your Free Account. Host Static Sites Directly From Azure Storage. Deploy Node.js Code. Learn More Today!"
+		},
+		{
+			"position": 2,
+			"link": "https://www.jetbrains.com/webstorm/promo/",
+			"title": "WebStorm - Best Node.js IDE - By JetBrains",
+			"description": "Get straight to coding with out-of-the-box Node.js support and built-in developer..."
+		},
+		{
+			"position": 3,
+			"link": "https://www.namecheap.com/support/knowledgebase/article.aspx/10047/2182/how-to-work-with-nodejs-app/",
+			"title": "How to work with Node.js App - Hosting - Namecheap.com",
+			"description": "Free Domain Privacy Protection & Business Email for 2 Months When You Register. Hurry Up!"
+		},
+		{
+			"position": 4,
+			"link": "https://www.udemy.com/course/nodejs-egitimi/",
+			"title": "Sıfırdan Her Yönüyle JavaScript & Node.JS | Udemy",
+			"description": "Hedeflerinize ulaşmak için dünyanın en büyük online öğrenim topluluğuna katılın. Öğrenmeye başlayın ve hedeflerinize ulaşın. 50 milyon+ kişi bize güveniyor."
+		}
+	],
+	"related_questions": [
+		{
+			"position": 1,
+			"question": "What is NodeJS used for?",
+			"answer_text": "Node. js is an open-source, cross-platform JavaScript runtime environment and library for running web applications outside the client's browser. Ryan Dahl developed it in 2009, and its latest iteration, version 15.14, was released in April 2021. Developers use Node.Feb 3, 2023",
+			"answer_resource": "https://www.simplilearn.com/tutorials/nodejs-tutorial/what-is-nodejs#:~:text=js%3F-,Node.,Developers%20use%20Node.",
+			"search_more": "https://www.google.com/search?q=What+is+NodeJS+used+for%3F&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQzmd6BAhJEAY"
+		},
+		{
+			"position": 2,
+			"question": "Is NodeJS backend or frontend?",
+			"answer_text": "Node. js is sometimes misunderstood by developers as a backend framework that is exclusively used to construct servers. This is not the case; Node. js can be used on the frontend as well as the backend.Feb 6, 2023",
+			"answer_resource": "https://www.simplilearn.com/tutorials/nodejs-tutorial/nodejs-backend#:~:text=Frontend%20or%20Backend%3F-,Node.,as%20well%20as%20the%20backend.",
+			"search_more": "https://www.google.com/search?q=Is+NodeJS+backend+or+frontend%3F&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQzmd6BAhLEAY"
+		},
+		{
+			"position": 3,
+			"question": "Is NodeJS a programming language?",
+			"answer_text": "Node. js is not a programming language. Rather, it's a runtime environment that's used to run JavaScript outside the browser.Mar 9, 2023",
+			"answer_resource": "https://kinsta.com/knowledgebase/what-is-node-js/#:~:text=a%20word%3A%20no.-,Node.,run%20JavaScript%20outside%20the%20browser.",
+			"search_more": "https://www.google.com/search?q=Is+NodeJS+a+programming+language%3F&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQzmd6BAhQEAY"
+		},
+		{
+			"position": 4,
+			"question": "Is NodeJS better than Java?",
+			"answer_text": "It's simpler than Java. It's ideal for full-stack developers. It offers faster and easier code writing. It has a node package manager, letting you store many libraries in one line.Mar 1, 2023",
+			"answer_resource": "https://www.simplilearn.com/node-js-vs-java-article#:~:text=It's%20simpler%20than%20Java,many%20libraries%20in%20one%20line",
+			"search_more": "https://www.google.com/search?q=Is+NodeJS+better+than+Java%3F&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQzmd6BAhdEAY"
+		}
+	],
+	"knowledge_graph": {
+		"title": "Node.js",
+		"subtitle": "Platform",
+		"description": "Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript Engine, and executes JavaScript code outside a web browser.",
+		"source": { "url": "https://en.wikipedia.org/wiki/Node.js", "text": "Wikipedia" },
+		"attributes": [
+			{
+				"hw:/collection/software:appear date": {
+					"Initial release date: ": { "value": "May 27, 2009" }
+				}
+			},
+			{
+				"ss:/webfacts:oper_system": {
+					"Operating system: ": {
+						"value": "z/OS, Linux, macOS, Microsoft Windows, SmartOS, FreeBSD, OpenBSD, IBM AIX",
+						"url": "https://www.google.com/search?q=z/OS&stick=H4sIAAAAAAAAAONgVuLQz9U3sCzKyljEylKl7x8MANLpX3sTAAAA&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQmxMoAXoECGcQAw"
+					}
+				}
+			},
+			{
+				"ss:/webfacts:licens": {
+					"License: ": {
+						"value": "MIT License",
+						"url": "https://www.google.com/search?q=MIT+License&stick=H4sIAAAAAAAAAONgVuLQz9U3MCkqr1jEyu3rGaLgk5mcmlecCgBBOW1oGgAAAA&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQmxMoAXoECFkQAw"
+					}
+				}
+			},
+			{
+				"ss:/webfacts:repositori": {
+					"Repository: ": {
+						"value": "github.com/nodejs/node",
+						"url": "https://www.google.com/search?q=github.com/nodejs/node&stick=H4sIAAAAAAAAAONgVuLSz9U3KKosKMhNX8Qqlp5ZklGapJecn6ufl5-SmlUMpgCVGuUHJwAAAA&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQmxMoAXoECGQQAw"
+					}
+				}
+			},
+			{
+				"ss:/webfacts:stabl_releas": {
+					"Stable release: ": { "value": "19.7.0 / February 21, 2023; 28 days ago" }
+				}
+			},
+			{
+				"hw:/collection/software:programming language": {
+					"Programming languages: ": {
+						"value": "JavaScript, C, C++, CoffeeScript",
+						"url": "https://www.google.com/search?q=JavaScript&si=AEcPFx6l3RvH8SFlhHZyn7jIc6m2bU9vmoFvFAMQv2WWSYjXN7gNjK_AYVMxUpWkhhH7Crxv41k5YvE8pmdcBwDcyIc2gfH9l59sIXXwfBhmMW4lI8VI1_76UOLO8x4Tvx0AosAHLNP3BvQ2ENUTV06B0wg4YnHOAXU_44cEHC9bY-_aFp-tI8bshgc2SjYVm2GZLv7lGMa2NrWByNJLkL61LQ9aa5xSWJ2JWtYYWyQrwdx5Jrz8GZAdwuSEVDprgD8Xi4zXSQG8iJ8P7WrxjjfMmLQXNxU9hk9Uetgctab8hSA647yHoPQ%3D&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQmxMoAXoECFYQAw"
+					}
+				}
+			},
+			{
+				"kc:/computer/software:developer": {
+					"Developer: ": {
+						"value": "Microsoft Corporation, Ryan Dahl, OpenJS Foundation, Bryan Cantrill",
+						"url": "https://www.google.com/search?q=Microsoft&si=AEcPFx6l3RvH8SFlhHZyn7jIc6m2bU9vmoFvFAMQv2WWSYjXN_R50J8Vg8oz8kQnUwUem5CLSRPq-_w3xrDoEkNQ39Jy8Aahuua-l1I-lCauRhR5UhBQtQn_Mwff76fWlT0w_FRByFXCGw4o-iUYmv4pQ56-Utb3HMh-nV8FVYrsF6V2DTbLTqyK9PtrtbrbNr8bPxHoGUFDIttcrxf8J_YMfoS_V5w4Z15iJueBnGpz93UOmlWF5G9wiXpuU5WN77pf4VeEqWxVo5ZCZCBqw6MVvjJcrfP_cA%3D%3D&sa=X&ved=2ahUKEwj5wrL68e_9AhVSQ_EDHVxwBQwQmxMoAXoECF4QAw"
+					}
+				}
+			}
+		]
+	},
+	"related_search": [
+		{ "position": 1, "query": "nodejs tutorial" },
+		{ "position": 2, "query": "node js documentation" },
+		{ "position": 3, "query": "node js w3schools" },
+		{ "position": 4, "query": "nodejs download" },
+		{ "position": 5, "query": "node.js function" },
+		{ "position": 6, "query": "node.js typescript" },
+		{ "position": 7, "query": "nodejs.org api" },
+		{ "position": 8, "query": "nodejs file server" }
+	]
+}
