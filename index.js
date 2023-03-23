@@ -150,6 +150,128 @@ const parseResults = async (pageHTML) => {
 	return parsedResults;
 };
 
+const parseMobileResults = async (pageHTML) => {
+	const $ = await cheerio.load(pageHTML);
+
+
+	// Organic search results
+	const organicResults = [];
+	try {
+		$('#rso > div > div > div:not(:has(h2:only-child),:has([jsname="yEVEwb"]),:has([data-iu="1"]),:has(>[jsname="Cpkphb"])):not([data-iu="1"]):not([jsname]):has(>*)')
+			.toArray()
+			.forEach((element, index) => {
+				try {
+					const result = {
+						position: index + 1,
+						title: $(element).find('div > a div[role="link"]').text(),
+						description: $(element).find('[data-content-feature]:not([data-sokoban-feature="Vjbam"],[data-sokoban-feature="mCCBcf"]),[id].BmP5tf').text(),
+						link: $(element).find('a[role="presentation"]').attr('href'),
+					};
+					organicResults.push(result);
+				} catch (error) {}
+			});
+	} catch (error) {}
+
+	// Advertisement search results
+	const adResults = [];
+	try {
+		$('[data-text-ad]')
+			.toArray()
+			.forEach((element, index) => {
+				try {
+					const result = {
+						position: index + 1,
+						link: $(element).find('a:has(div[role=heading])').attr('href'),
+						title: $(element).find('div[role=heading]').text(),
+						description: $(element).find('>div > div > div.MUxGbd > div').text()
+					};
+					adResults.push(result);
+				} catch (error) {}
+			});
+	} catch (error) {}
+
+	// People also asked
+	const relatedQuestions = [];
+	try {
+		$(`.related-question-pair:has(div[role="heading"])`)
+			.toArray()
+			.forEach((element, index) => {
+				try {
+					const result = {
+						position: index + 1,
+						question: $($(element).find('.dnXCYb[role=button]')).text(),
+						answer_text: $($(element).find('.bCOlv div[role=heading]')).text(),
+						answer_resource: $(element).find('.yuRUbf > a').attr().href,
+						search_more: $($(element).find('.bCOlv > div > a')).attr().href,
+					};
+					relatedQuestions.push(result);
+				} catch (error) {}
+			});
+	} catch (error) {}
+
+	// Knowledge graph
+	const knowledgeGraphCard = $('[role=complementary]');
+
+	// Knowledge graph -> known attributes
+	const attributes = [];
+	try {
+		$('[role=complementary] .wDYxhc[data-attrid]')
+			.toArray()
+			.forEach((element) => {
+				try {
+					const attributeValues = {
+						[$(element).find('div div span:first').text()]: {
+							value: $(element).find('div div span:last').text(),
+							url: $(element).find('div div div > span > span > a').attr('href'),
+						}
+					}
+					const result = {
+						[$(element).attr()['data-attrid']]: attributeValues,
+					};
+
+					attributes.push(result);
+				} catch (error) {}
+			});
+	} catch (error) {}
+
+	let knowledgeGraph;
+	try {
+		knowledgeGraph = {
+			title: knowledgeGraphCard.find('[data-attrid="title"]:first').text(),
+			subtitle: knowledgeGraphCard.find('[data-attrid="subtitle"]:first').text(),
+			description: knowledgeGraphCard.find('[data-md="50"] h3+span').text(),
+			official_website: knowledgeGraphCard.find('a[data-attrid="visit_official_site"]').attr('href'),
+			source: {
+				url: knowledgeGraphCard.find('[data-md="50"] h3+span+span > a').attr('href'),
+				text: knowledgeGraphCard.find('[data-md="50"] h3+span+span > a').text(),
+			},
+			attributes,
+		};
+	} catch (error) {}
+
+	// Related search queries
+	const relatedSearch = [];
+	try {
+		$('.AuVD.wHYlTd.Ww4FFb.vt6azd span.kTSm7b.wHYlTd')
+			.toArray()
+			.forEach((element, index) => {
+				relatedSearch.push({
+					position: index + 1,
+					query: $(element).text(),
+				});
+			});
+	} catch (error) {}
+
+	let parsedResults = {
+		...(organicResults.length > 0 && { organic_results: organicResults }),
+		// ...(adResults.length > 0 && { paid_ads: adResults }),
+		// ...(relatedQuestions.length > 0 && { related_questions: relatedQuestions }),
+		// ...(knowledgeGraph && { knowledge_graph: knowledgeGraph }),
+		// ...(relatedSearch.length > 0 && { related_search: relatedSearch }),
+	};
+	return parsedResults;
+};
+
 const init = async () => {
 	try {
 		const [browser, page] = await createBrowserPage();
@@ -180,8 +302,7 @@ const init = async () => {
 };
 
 const parseFromFile = async (pageHTML) => {
-    // return parseResults(pageHTML);
-	const parsedResults = await JSON.stringify(await parseResults(pageHTML));
+	const parsedResults = await JSON.stringify(await parseMobileResults(pageHTML));
     writeFile(`${resultsPath}/json/${keyword}.json`, parsedResults);
 
     return true;
